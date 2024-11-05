@@ -1,5 +1,23 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
 body{
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
   background-color: gray;
   color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  padding: 0.5%;
+}
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 70%;
+  background-color: black;
+  padding: 0.5%;
 }

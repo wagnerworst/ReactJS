@@ -1,15 +1,16 @@
 import './App.css'
+import Header from './Components/Header'
 
-function App() {
-
-  const language = 1==1 ? "React" : "VueJS";
-
+const App = () => {
   return (
     <>
-      <header>
-        <h1>Aula 01</h1>
-        <h2>Introdução ao {language}</h2>
-      </header>
+      <Header 
+        texto="Aula" 
+        aula={2} 
+        data={new Date(2024,10,15)}
+      >
+        Nublado
+      </Header>
     </>
   )
 }

@@ -1,0 +1,10 @@
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 70%;
+  background-color: black;
+  padding: 0.5%;
+}

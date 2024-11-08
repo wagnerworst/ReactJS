@@ -1,0 +1,20 @@
+button{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 15px;
+  margin-right: 5px;
+
+  &.perigo{
+    background-color: rgb(252, 138, 138);
+  }
+  
+  &.sucesso{
+    background-color: rgb(135, 207, 135);
+  }
+
+  &.alerta{
+    background-color: rgb(207, 206, 135);
+  }
+}

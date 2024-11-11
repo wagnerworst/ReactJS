@@ -2,6 +2,7 @@ import { useEffect ,useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import Botao from './Components/Botao';
+import SelecionaCurso from './Components/SelecionaCurso';
 
 const App = () => {
   //Variavel "dinâmcia"
@@ -51,6 +52,7 @@ const App = () => {
         onClick={()=> {setNumero(0)}}
       />
       <p>{numero}</p>
+      <SelecionaCurso/>
     </>
   )
 }

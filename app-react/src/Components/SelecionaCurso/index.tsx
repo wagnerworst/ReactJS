@@ -1,3 +1,4 @@
+import StyledLabel from "./SelecionaCurso.styled";
 import { ChangeEvent, useState, Fragment } from "react";
 
 
@@ -13,8 +14,8 @@ const SelecionaCurso = () => {
   const opcaoCurso = (item: string, index: number) => {
     return(
       <Fragment key={index}>
-            <input type="radio" id={item} value={item} onChange={alteraCurso}/>
-            <label htmlFor="React">{item}</label>
+            <input type="radio" name="Cursos" value={item} onChange={alteraCurso}/>
+            <StyledLabel htmlFor={item}>{item}</StyledLabel>
             <br />
       </Fragment>
     )

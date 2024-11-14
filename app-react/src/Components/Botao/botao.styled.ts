@@ -1,4 +1,7 @@
-button{
+import styled from "styled-components";
+import Botao from ".";
+
+const BotaoCustom = styled(Botao)`
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -9,7 +12,7 @@ button{
   &.perigo{
     background-color: rgb(252, 138, 138);
   }
-  
+
   &.sucesso{
     background-color: rgb(135, 207, 135);
   }
@@ -17,4 +20,10 @@ button{
   &.alerta{
     background-color: rgb(207, 206, 135);
   }
-}
+
+  &.amigo{
+    background-color: rgb(68, 162, 224);
+  }
+`;
+
+export default BotaoCustom;

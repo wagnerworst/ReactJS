@@ -1,8 +1,9 @@
 import { useEffect ,useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
-import Botao from './Components/Botao';
 import SelecionaCurso from './Components/SelecionaCurso';
+import BotaoCustom from './Components/Botao/botao.styled';
+import MenuCustom from './Components/Menu/menu.styled';
 
 const App = () => {
   //Variavel "dinâmcia"
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <>
+      <MenuCustom/>
       <Header 
         texto="Aula" 
         aula={2} 
@@ -36,23 +38,36 @@ const App = () => {
       >
         Nublado
       </Header>
-      <Botao 
+      <BotaoCustom 
         texto='Contador'
         severidade='perigo'
         onClick={()=> {setNumero(numero + 1)}}
       />
-        <Botao 
+        <BotaoCustom 
         texto='Decrementador'
         severidade='sucesso'
         onClick={()=> {setNumero(numero - 1)}}
       />
-      <Botao 
+      <BotaoCustom 
         texto='Zerar'
         severidade='alerta'
         onClick={()=> {setNumero(0)}}
       />
       <p>{numero}</p>
       <SelecionaCurso/>
+
+      <Header 
+        texto="Aula" 
+        aula={5} 
+        data={new Date(2024,11,12)}
+      >
+        Nublado
+      </Header>
+      <BotaoCustom 
+        texto='Amigo'
+        severidade='amigo'
+        onClick={()=> {setNumero(numero + 1)}}
+      />
     </>
   )
 }

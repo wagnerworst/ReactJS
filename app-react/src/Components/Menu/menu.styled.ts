@@ -2,15 +2,17 @@ import Menu from ".";
 import styled from "styled-components";
 
 const MenuCustom = styled(Menu)`
+display: flex;
+align-items: center;
+height: 8vh;
+background-color: rgba(42,42,42);
 /* Estilo para a lista */
 ul {
   list-style: none; /* Remove os marcadores */
   padding: 0;
   margin: 0;
-  background-color: #000; /* Fundo preto */
   display: flex; /* Para os itens ficarem em linha */
   justify-content: center; /* Centraliza os itens horizontalmente */
-  border-radius: 15px;
 }
 
 /* Estilo para os itens da lista */

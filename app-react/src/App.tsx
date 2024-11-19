@@ -1,74 +1,29 @@
-import { useEffect ,useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header';
-import SelecionaCurso from './Components/SelecionaCurso';
-import BotaoCustom from './Components/Botao/botao.styled';
 import MenuCustom from './Components/Menu/menu.styled';
+import HomeCustom from './pages/Home/home.styled';
+import FormularioCustom from './pages/Formulario/formulario.styled';
+import ListagemCustom from './pages/Listagem/listagem.styled';
+import ListagemDetalhesCustom from './pages/ListagemDetalhes/listagemDetalhes.styled';
+
 
 const App = () => {
-  //Variavel "dinâmcia"
-  const [numero, setNumero] = useState(0);
-  
-  //Monitora algo sempre vai acontecer quando carregar a página
-  useEffect(() => {
-    if(numero != 0)
-      {
-        alert("Numero está diferente de zero");
-      }
-  },
-  [numero]
-  )
-
   return (
-    <>
-      <MenuCustom/>
-      <Header 
-        texto="Aula" 
-        aula={2} 
-        data={new Date(2024,10,15)}
-      >
-        Nublado
-      </Header>
-      <br />
 
-      <Header 
-        texto="Aula" 
-        aula={3} 
-        data={new Date(2024,11,7)}
-      >
-        Nublado
-      </Header>
-      <BotaoCustom 
-        texto='Contador'
-        severidade='perigo'
-        onClick={()=> {setNumero(numero + 1)}}
-      />
-        <BotaoCustom 
-        texto='Decrementador'
-        severidade='sucesso'
-        onClick={()=> {setNumero(numero - 1)}}
-      />
-      <BotaoCustom 
-        texto='Zerar'
-        severidade='alerta'
-        onClick={()=> {setNumero(0)}}
-      />
-      <p>{numero}</p>
-      <SelecionaCurso/>
+      <BrowserRouter>
+        <MenuCustom />
 
-      <Header 
-        texto="Aula" 
-        aula={5} 
-        data={new Date(2024,11,12)}
-      >
-        Nublado
-      </Header>
-      <BotaoCustom 
-        texto='Amigo'
-        severidade='amigo'
-        onClick={()=> {setNumero(numero + 1)}}
-      />
-    </>
+          <Routes>
+            <Route path='/' element={<HomeCustom />}></Route>
+            <Route path='/formulario' element={<FormularioCustom/>}></Route>
+            <Route path='/listagem'>
+              <Route index element={<ListagemCustom/>}/>
+              <Route path=":id" element={<ListagemDetalhesCustom/>}></Route>
+            </Route>
+            <Route path='*' element={<h1>404 - Não Encontrado</h1>}></Route>
+          </Routes>
+
+      </BrowserRouter>
   )
 }
 

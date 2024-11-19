@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom"
+
 interface MenuProps{
   className?: string
+
 }
 
 const Menu = ( {className}: MenuProps ) => {
@@ -7,9 +10,9 @@ const Menu = ( {className}: MenuProps ) => {
     <>
     <nav className={`${className}`}>
       <ul >
-          <li><a href="">Home</a></li>
-          <li><a href="">Sobre</a></li>
-          <li><a href="">Contato</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/formulario">Formulario</Link></li>
+          <li><Link to="/listagem">Listagem</Link></li>
         </ul>
     </nav>
     </>

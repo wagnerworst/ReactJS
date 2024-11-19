@@ -2,10 +2,9 @@ import styled from "styled-components";
 import Listagem from ".";
 
 const ListagemCustom = styled(Listagem)`
-  margin-top: 7vh;
+  padding: 7vh;
   display: flex;
   justify-content: center;
-  width: 100vw;
 
   table {
     width: 50vw;
@@ -15,26 +14,25 @@ const ListagemCustom = styled(Listagem)`
     padding: 16px;
 
     thead {
-      background-color: $table-header-color;
+      background-color: rgba(255,255,255);
+      border-top: 16px;
 
       th {
         padding: 12px;
         text-align: left;
         border-bottom: 2px solid $border-color;
-        color: $text-color;
+        color: rgba(0,0,0,.9);
       }
     }
 
     tbody {
       tr {
         &:hover {
-          background-color: $table-row-hover-color;
+          background-color: rgba(50,50,50);
         }
 
         td {
           padding: 12px;
-          border-bottom: 1px solid $border-color;
-          color: $text-color;
         }
       }
     }

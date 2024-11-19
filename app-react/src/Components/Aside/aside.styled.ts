@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Aside from ".";
 
 const AsideCustom = styled(Aside)`
-  aside{
+    min-width: 248px;
     grid-area: aside;
     display: flex;
     align-items: center;
@@ -17,6 +17,8 @@ const AsideCustom = styled(Aside)`
       background-color: rgba(42,42,42);
     
       &.logo{
+        min-width: 125px;
+        min-height: 117px;
         display: flex;
         justify-content: center;
         padding: 3%;
@@ -29,11 +31,13 @@ const AsideCustom = styled(Aside)`
           border-radius: 15%;
           border-style: solid;
 
-          width: auto;
+          width: 90%;
           height: auto;
         }
       }
       &.info{
+        min-width: 200px;
+        min-height: 121px;
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -52,6 +56,11 @@ const AsideCustom = styled(Aside)`
 
           a > * {
             height: 48px;
+            padding: 5px;
+          }
+
+          a:hover{
+            background-color: rgba(32,32,32);
           }
         }
 
@@ -63,7 +72,7 @@ const AsideCustom = styled(Aside)`
         }
       }
     }  
-  }
+
 `;
 
 export default AsideCustom;

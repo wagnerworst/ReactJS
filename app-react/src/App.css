@@ -3,10 +3,25 @@
   padding: 0px;
   text-decoration: none;
 }
+html{
+  min-width: 621.25px;
+  min-height: 475px;
+}
 body{
   font-family: "Roboto", serif;
   font-weight: 500;
   font-style: normal;
   background-color: rgba(33,33,33);
-  color: white;
+  color: rgba(255, 255, 255);
+
+}
+#root{
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+		"aside section"
+    "footer footer"
+	;
+  grid-template-columns: 30vw 70vw;
+  grid-template-rows: 15vh 78vh 7vh;
 }

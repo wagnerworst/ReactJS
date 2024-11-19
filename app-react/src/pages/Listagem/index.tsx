@@ -17,7 +17,6 @@ const Listagem = ({className}: ListagemProps) => {
           </thead>
 
           <tbody>
-          
             <tr>
               <Link to="789">
                 <td>Recursos Humanos</td>

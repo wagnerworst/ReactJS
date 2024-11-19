@@ -18,7 +18,7 @@ padding-top: 5vh;
 
   input{
     width: 70%;
-    height: 35px;
+    height: 3vh;
     border-radius: 15px;
     background-color: rgba(0,0,0,.5%);
     padding: 7px;

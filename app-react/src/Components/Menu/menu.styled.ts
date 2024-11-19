@@ -6,6 +6,7 @@ display: flex;
 align-items: center;
 height: 8vh;
 background-color: rgba(42,42,42);
+grid-area: nav;
 /* Estilo para a lista */
 ul {
   list-style: none; /* Remove os marcadores */

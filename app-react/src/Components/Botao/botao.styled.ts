@@ -8,6 +8,10 @@ const BotaoCustom = styled(Botao)`
   font-weight: 700;
   font-size: 15px;
   margin-right: 5px;
+  
+  &:hover{
+    cursor: pointer;
+  }
 
   &.perigo{
     background-color: rgb(252, 138, 138);

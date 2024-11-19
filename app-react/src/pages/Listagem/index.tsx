@@ -5,6 +5,25 @@ interface ListagemProps {
 }
 
 const Listagem = ({className}: ListagemProps) => {
+
+  const items = [
+    {
+        id_departamento: 1,
+        nome: "Recursos Humanos",
+        sigla: "RH",
+    },
+    {
+      id_departamento: 2,
+      nome: "Gestão Financeiro",
+      sigla: "GF",
+    },
+    {
+      id_departamento: 3,
+      nome: "Compras",
+      sigla: "CO",
+    },
+  ];
+
   return(
     <>
       <div className={`${className}`}>
@@ -17,21 +36,14 @@ const Listagem = ({className}: ListagemProps) => {
           </thead>
 
           <tbody>
-            <tr>
-              <Link to="789">
-                <td>Recursos Humanos</td>
-              </Link>
-              <td>RH</td>
-            </tr>
-            
-            <tr>
-              <td>Recursos Humanos</td>
-              <td>RH</td>
-            </tr>
-            <tr>
-              <td>Recursos Humanos</td>
-              <td>RH</td>
-            </tr>
+            {items.map((item) => 
+              <tr>
+                <Link to={`${item.id_departamento}`}>
+                  <td>{`${item.nome}`}</td>
+                </Link>
+                <td>{`${item.sigla}`}</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

@@ -10,7 +10,7 @@ const Formulario = ({className}:FormularioProps) => {
   const [nome, setNome] = useState("");
   const [empresa, setEmpresa] = useState("");
   const [mensagem, setMensagem ] = useState("")
-  const [exibirMsg, setExibirMsg ] = useState(false)
+  const [campoInvalido, setCampoInvalido ] = useState("")
 
   const atualizaDados = (event: React.ChangeEvent<HTMLInputElement>)=>{
     if(event.target.name === "Nome"){
@@ -25,16 +25,19 @@ const Formulario = ({className}:FormularioProps) => {
   };
 
   const validaFormulario = () =>{
-    if(nome == "" || empresa == "")
+    setMensagem("");
+    setCampoInvalido("");
+    if(nome == "")
     {
-      setMensagem("Nome e Empresa são obrigatórios");
-      setExibirMsg(true)
+      setMensagem("Nome é obrigatório");
+      setCampoInvalido("Nome")
       return;
     }
-    
-    if(nome && empresa)
+
+    if(empresa == "")
       {
-        setExibirMsg(false)
+        setMensagem("Empresa é obrigatório");
+        setCampoInvalido("Empresa")
         return;
       }
   }
@@ -45,7 +48,7 @@ const Formulario = ({className}:FormularioProps) => {
         <div className="formulario">
           <label htmlFor="Recrutador">Nome</label>
           <input 
-            className={`${exibirMsg ? "inputInvalido" : ""}`}
+            className={`${campoInvalido == "Nome" ? "inputInvalido" : ""}`}
             type="text" 
             name="Nome" 
             placeholder="Wagner Willian Worst"
@@ -54,7 +57,7 @@ const Formulario = ({className}:FormularioProps) => {
 
           <label htmlFor="Empresa">Empresa</label>
           <input 
-            className={`${exibirMsg ? "inputInvalido" : ""}`}
+            className={`${campoInvalido == "Empresa" ? "inputInvalido" : ""}`}
             type="text" 
             name="Empresa" 
             placeholder="Wagner's Corp"
@@ -69,7 +72,7 @@ const Formulario = ({className}:FormularioProps) => {
             severidade="sucesso"
             onClick={validaFormulario}
           />
-          <span className={`${exibirMsg ? "" : "hidden"}`}>{mensagem}</span>
+          <span className={`${mensagem == "" ? "hidden" : ""}`}>{mensagem}</span>
         </div>
       </div>
     </>

@@ -33,6 +33,7 @@ const ListagemCustom = styled(Listagem)`
 
         td {
           padding: 12px;
+          color: rgba(255, 255, 255);
         }
       }
     }

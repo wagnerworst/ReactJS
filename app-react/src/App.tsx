@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
 import MenuCustom from './Components/Menu/menu.styled';
 import HomeCustom from './pages/Home/home.styled';
@@ -7,11 +8,14 @@ import ListagemCustom from './pages/Listagem/listagem.styled';
 import ListagemDetalhesCustom from './pages/ListagemDetalhes/listagemDetalhes.styled';
 import AsideCustom from './Components/Aside/aside.styled';
 import FooterCustom from './Components/Footer/footer.styled';
-
+import PrefConxtext from './Context/generalContext';
 
 const App = () => {
-  return (
 
+  const [tema, setTema] = useState("dark");
+
+  return (
+    <PrefConxtext.Provider value={{ tema, setTema}}>
       <BrowserRouter>
           <MenuCustom/>
           <AsideCustom/>
@@ -28,6 +32,7 @@ const App = () => {
           </section>
           <FooterCustom/>
       </BrowserRouter>
+    </PrefConxtext.Provider>
   )
 }
 

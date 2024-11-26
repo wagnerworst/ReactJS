@@ -1,5 +1,8 @@
-import { useState } from "react"
+import { useState, } from "react"
+import { useNavigate } from "react-router-dom"
 import BotaoCustom from "../../Components/Botao/botao.styled"
+import api from "../../Services/api"
+
 
 interface FormularioProps{
   className?: string
@@ -9,8 +12,9 @@ const Formulario = ({className}:FormularioProps) => {
 
   const [nome, setNome] = useState("");
   const [empresa, setEmpresa] = useState("");
-  const [mensagem, setMensagem ] = useState("")
-  const [campoInvalido, setCampoInvalido ] = useState("")
+  const [mensagem, setMensagem ] = useState("");
+  const [campoInvalido, setCampoInvalido ] = useState("");
+  const nav = useNavigate();
 
   const atualizaDados = (event: React.ChangeEvent<HTMLInputElement>)=>{
     if(event.target.name === "Nome"){
@@ -35,11 +39,31 @@ const Formulario = ({className}:FormularioProps) => {
     }
 
     if(empresa == "")
-      {
-        setMensagem("Empresa é obrigatório");
-        setCampoInvalido("Empresa")
-        return;
-      }
+    {
+      setMensagem("Empresa é obrigatório");
+      setCampoInvalido("Empresa")
+      return;
+    }
+
+    postApi(nome, empresa);
+  }
+
+  const postApi = async(nome: string, sigla: string) => {
+    try
+    {
+      await api.post(
+        "/departamentos",
+        {
+          nome,
+          sigla
+        }
+      )
+      nav("/listagem")
+    }
+    catch(e: any)
+    {
+      setMensagem(e.response?.data?.message);
+    }
   }
 
   return (

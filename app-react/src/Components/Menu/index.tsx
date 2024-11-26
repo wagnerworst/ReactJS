@@ -1,9 +1,14 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import PrefConxtext from "../../Context/generalContext"
 
 interface MenuProps{
   className?: string
 
 }
+
+const prefs = useContext(PrefConxtext);
+console.log(prefs);
 
 const Menu = ( {className}: MenuProps ) => {
   return(
